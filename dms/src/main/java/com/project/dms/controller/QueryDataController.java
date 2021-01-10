@@ -511,6 +511,7 @@ public class QueryDataController {
 	@RequestMapping("/queryData/getRecordDetailPageData")
 	@ResponseBody
     public Map<String,Object>  getRecordDetailPageData(String conditionIdx) {
+		String ipcUrl="https://api.qihuangjie.com/record_images/";
 		Map<String,Object> result=new HashMap<String, Object>();
 		
 		int conditionIdx_int=Integer.parseInt(conditionIdx); 
@@ -521,11 +522,50 @@ public class QueryDataController {
 			recordDetail=recordDetailList.get(0);
 		}
 		
+		List<Map<String,Object>> picRecords=queryDataService.getPicsByConditionIdx(conditionIdx_int);
+		Map<String,Object> picRecord= new HashMap<String,Object>();
+		List<String> pics=new ArrayList<String>();
+		if(picRecords!=null&&picRecords.size()>0){
+			picRecord=picRecords.get(0);
+			if(picRecord.get("p1")!=null){
+				if(!(picRecord.get("p1").toString().equals(" "))){
+					pics.add(ipcUrl+picRecord.get("p1").toString());
+				}
+				
+			}
+			if(picRecord.get("p2")!=null){
+				if(!(picRecord.get("p2").toString().equals(" "))){
+					pics.add(ipcUrl+picRecord.get("p2").toString());
+				}
+				
+			}
+			if(picRecord.get("p3")!=null){
+				if(!(picRecord.get("p3").toString().equals(" "))){
+					pics.add(ipcUrl+picRecord.get("p3").toString());
+				}
+				
+			}
+			if(picRecord.get("p4")!=null){
+				if(!(picRecord.get("p4").toString().equals(" "))){
+					pics.add(ipcUrl+picRecord.get("p4").toString());
+				}
+				
+			}
+			if(picRecord.get("p5")!=null){
+				if(!(picRecord.get("p5").toString().equals(" "))){
+					pics.add(ipcUrl+picRecord.get("p5").toString());
+				}
+				
+			}
+		}
+		
 		List<Map<String,Object>> drugDetailList=queryDataService.getDrugDetailByConditionIdx(conditionIdx_int);
         
         result.put("recordDetail", recordDetail);//
         
         result.put("drugDetailList", drugDetailList);//
+        
+        result.put("pics", pics);//
         
         return result;
     }

@@ -26,7 +26,12 @@
           <view class="weui-form-preview__value">{{parts}}</view>
       </view>
   </view>
-  
+     <view class="weui-cell">
+                
+                <view class='showImg' wx:for="{{imgList}}" wx:key="{{index}}" style="float:left;">
+                    <image class="widget_arrow" src="{{item}}" bindtap="preview"  data-src="{{item}}"></image>
+                </view> 
+    </view>
   
   <view class="page-section">
     <view class="page-section-title" style="display:flex;flex-direction:row;justify-content: flex-start;">

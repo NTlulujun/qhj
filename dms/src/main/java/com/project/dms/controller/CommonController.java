@@ -100,11 +100,15 @@ public class CommonController {
            int conditionId=Integer.parseInt(conditionIdStr);
            InquiryRcdSub  inquiryRcdSub =inquiryRcdSubService.getInquiryRcdSubById(conditionId);
            if(pic_no.equals("0")){
-        	   inquiryRcdSub.setTonguePicId1(realPath+"\\"+picName);
+        	   inquiryRcdSub.setTonguePicId1(picName);
            }else if(pic_no.equals("1")){
-        	   inquiryRcdSub.setTonguePicId2(realPath+"\\"+picName);
+        	   inquiryRcdSub.setTonguePicId2(picName);
            }else if(pic_no.equals("2")){
-        	   inquiryRcdSub.setTonguePicId3(realPath+"\\"+picName);
+        	   inquiryRcdSub.setTonguePicId3(picName);
+           }else if(pic_no.equals("3")){
+        	   inquiryRcdSub.setTonguePicId4(picName);
+           }else if(pic_no.equals("4")){
+        	   inquiryRcdSub.setTonguePicId5(picName);
            }
            inquiryRcdSubService.updateInquiryRcdSub(inquiryRcdSub);
        } catch (IOException e) {

@@ -43,5 +43,7 @@ public interface PhyConditionTypeMapper {
 	
 	List<Map<String,Object>> selectRecordDetailByConditionIdx(int conditionIdx);
 	
+	List<Map<String,Object>> selectPicsByConditionIdx(int conditionIdx);
+	
 	List<Map<String,Object>> selectDrugDetailByConditionIdx(int conditionIdx);
 }

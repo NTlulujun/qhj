@@ -222,5 +222,11 @@ public class QueryDataServiceImpl implements QueryDataService {
 		return perSysSub;
 	}
 
+	@Override
+	public List<Map<String, Object>> getPicsByConditionIdx(int conditionIdx) {
+		// TODO Auto-generated method stub
+		return phyConditionTypeMapper.selectPicsByConditionIdx(conditionIdx);
+	}
+
 	
 }

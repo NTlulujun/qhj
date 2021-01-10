@@ -115,6 +115,17 @@
 	 
   </select>
   
+ <select id="selectPicsByConditionIdx" resultType="java.util.Map">
+			select  d.TONGUE_PIC_ID1 as p1,d.TONGUE_PIC_ID2 as p2,d.TONGUE_PIC_ID3 as p3,d.TONGUE_PIC_ID4 as p4,d.TONGUE_PIC_ID5 as p5
+			 from   PHY_CONDITION_TYPE a  
+			inner join INQUIRY_RCD_SUB d on d.CONDITION_ID=a.CONDITION_ID 
+		
+			where a.CONDITION_IDX=#{conditionIdx,jdbcType=INTEGER} 
+			
+	 
+  </select>
+  		
+  
   <select id="selectDrugDetailByConditionIdx" resultType="java.util.Map">
      	
 		select  d.DRUG_NAME as name,d.UNIT_PRICE as price,sum(c.UNIT_QTY) as count 	

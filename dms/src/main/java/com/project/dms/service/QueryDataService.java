@@ -87,5 +87,7 @@ public interface  QueryDataService {
 	
 	List<Map<String,Object>> getRecordDetailByConditionIdx(int conditionIdx);
 	
+	List<Map<String,Object>> getPicsByConditionIdx(int conditionIdx);
+	
 	List<Map<String,Object>> getDrugDetailByConditionIdx(int conditionIdx);
 }

@@ -59,3 +59,13 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
   transform: translate(-50%, -50%) scale(1);
   -webkit-transform: translate(-50%, -50%) scale(1);
 }
+.widget_arrow{
+  width:5rem; 
+  height:10rem; 
+}
+.showImg{
+  width:5rem; 
+  height:10rem; 
+  display: flex;
+  margin-left: 3px;
+}
