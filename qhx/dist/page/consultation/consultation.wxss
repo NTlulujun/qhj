@@ -1,0 +1,16 @@
+/* example/input/input.wxss */
+.weui-form-preview{
+    margin-bottom: 25px;
+}
+.searchbar-result{
+    margin-top: 0;
+    font-size: 14px;
+}
+.searchbar-result .weui-cell__bd{
+  padding: 2px 0 2px 20px;
+  color: #666;
+}
+.page__bd {
+  padding-bottom: 0px;
+  }
+  

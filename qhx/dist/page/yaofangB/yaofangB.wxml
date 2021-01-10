@@ -1,0 +1,72 @@
+<view class="weui-form-preview">
+  <view class="weui-form-preview__hd">
+      <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">本次调理</view>
+          <view class="weui-form-preview__value_in-hd">{{symptomsName}}</view>
+      </view>
+  </view>
+  <view class="weui-form-preview__bd">
+     
+      <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">类型</view>
+          <view class="weui-form-preview__value">{{userType}}</view>
+      </view>
+      <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">脏项</view>
+          <view class="weui-form-preview__value">{{organsName}}</view>
+      </view>
+      <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">舌苔</view> 
+          <view class="weui-form-preview__value">{{tongueName}}</view>
+      </view>
+      <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">调理类型</view>
+          <view class="weui-form-preview__value">基础调理</view>
+      </view>
+  </view>
+  
+  <view class="page-section">
+    <view class="page-section-title" style="display:flex;flex-direction:row;justify-content: flex-start;">
+      <view class="text_title"><text >部位</text></view>
+      <view class="text_title"><text >名称</text></view>
+      <view class="text_title"><text >数量</text></view>
+      <view class="text_title"><text >单价</text></view>
+      
+    </view>
+
+    <view class="page-section-title" style="display:flex;flex-direction:row;justify-content: flex-start;" wx:for="{{yaofang}}" wx:key="DRUGID">
+      <view class="text_context"><text >{{item.PART}}</text></view>
+      <view class="text_context"><text >{{item.NAME}}</text></view>
+      <view class="text_context"><text >{{item.COUNT}}</text></view>
+      <view class="text_context"><text >{{item.PRICE}}</text></view>
+      
+    </view>
+<!-- 
+    <view class="page-section-title" style="display:flex;flex-direction:row;justify-content: flex-start;">
+      <view class="text_context"><text >油B</text></view>
+      <view class="text_context"><text >24</text></view>
+      <view class="text_context"><text >100g</text></view>
+    </view>
+
+    <view class="page-section-title" style="display:flex;flex-direction:row;justify-content: flex-start;">
+      <view class="text_context"><text >膜A</text></view>
+      <view class="text_context"><text >128</text></view>
+      <view class="text_context"><text >20g</text></view>
+    </view> -->
+
+      <view class="weui-form-preview__hd">
+          <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label">本次金额</view>
+              <view class="weui-cell__bd">
+                    <input class="weui-input" id="amount" name="amount" placeholder="{{amount}}" bindinput="amountChange"/>
+                </view>
+          </view>
+      </view>
+
+
+  </view>
+
+  <view class="weui-btn-area">
+      <button class="weui-btn" type="primary" bindtap="submit2over">确定</button>
+  </view>
+</view> 

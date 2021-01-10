@@ -1,0 +1,86 @@
+{
+  "pages": [
+    "page/login/login",
+    "example/index",
+    "page/index",
+    "page/user/user",
+    "page/input/input",
+    "page/question/question",
+    "page/consultation/consultation",
+    "page/tiaoli/tiaoli",
+    "page/record/record",
+    "page/recordDetail/recordDetail",
+    "example/button/button",
+    "example/list/list",
+    "example/slideview/slideview",
+    "example/input/input",
+    "example/slider/slider",
+    "example/uploader/uploader",
+    "example/article/article",
+    "example/badge/badge",
+    "example/flex/flex",
+    "example/footer/footer",
+    "example/gallery/gallery",
+    "example/grid/grid",
+    "example/icons/icons",
+    "example/loading/loading",
+    "example/loadmore/loadmore",
+    "example/panel/panel",
+    "example/preview/preview",
+    "example/progress/progress",
+    "example/actionsheet/actionsheet",
+    "example/half-screen-dialog/half-screen-dialog",
+    "example/dialog/dialog",
+    "example/msg/msg",
+    "example/msg/msg_text",
+    "example/msg/msg_text_primary",
+    "example/msg/msg_success",
+    "example/msg/msg_fail",
+    "example/picker/picker",
+    "example/toast/toast",
+    "example/navigation-bar/navigation-bar",
+    "example/tabbar/tabbar",
+    "example/searchbar/searchbar"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "南通岐黄颉",
+    "navigationBarBackgroundColor": "#EDEDED",
+    "backgroundColor": "#EDEDED"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "page/user/user",
+        "text": "会员",
+        "iconPath": "images/shouye.png",
+        "selectedIconPath": "images/shouyefill.png"
+      },
+      {
+        "pagePath": "page/input/input",
+        "text": "调理",
+        "iconPath": "images/sousuo.png",
+        "selectedIconPath": "images/sousuoleimufill.png"
+      },
+      {
+        "pagePath": "page/consultation/consultation",
+        "text": "记录",
+        "iconPath": "images/yonghu.png",
+        "selectedIconPath": "images/yonghufill.png"
+      }
+    ],
+    "color": "#333",
+    "selectedColor": "#f7982a",
+    "backgroundColor": "#f6f6f6",
+    "borderStyle": "white"
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "style": "v2",
+  "debug": true,
+  "sitemapLocation": "sitemap.json"
+}

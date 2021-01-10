@@ -1,0 +1,60 @@
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class="weui-form-preview">
+  <view class="weui-form-preview__hd">
+      <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">问诊时间</view>
+          <view class="weui-form-preview__value_in-hd">{{filter.formatTime(time)}}</view>
+      </view>
+      <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">类型</view>
+          <view class="weui-form-preview__value">{{filter.formatUserType(userType)}}</view>
+      </view> 
+      <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">症状</view>
+          <view class="weui-form-preview__value">{{symptomsNames}}</view>
+      </view>
+      <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">备注</view>
+          <view class="weui-form-preview__value">{{remark}}</view>
+      </view>
+  </view>
+
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <view>调理记录列表</view>
+                </view>
+    </view>
+
+    <view class="page__bd page__bd_spacing" hidden="{{contextShowed}}">
+        <view class="kind-list">
+                <view class="kind-list__item">
+                    <view class="kind-list__item-bd kind-list__item-bd_show">
+                        <view class="weui-cells  weui-cells_show">
+                            <block wx:for="{{phyConditionTypeRecordList}}" wx:for-item="phyConditionTypeRecord" wx:key="*this">
+                                <navigator url="../recordDetail/recordDetail?conditionIdx={{phyConditionTypeRecord.conditionIdx}}&time={{filter.formatTime(phyConditionTypeRecord.creatTime)}}&conditionName={{phyConditionTypeRecord.conditionName}}" class="weui-cell weui-cell_access">
+                                    <view class="weui-cell__bd">{{phyConditionTypeRecord.conditionName}} ({{filter.formatTime(phyConditionTypeRecord.creatTime)}})</view>
+                                    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                                </navigator>
+                                <!-- <navigator url="../recordDetail/recordDetail" class="weui-cell weui-cell_access">
+                                    <view class="weui-cell__bd">感冒（2020-07-02）</view>
+                                    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                                </navigator>
+                                <navigator url="../recordDetail/recordDetail" class="weui-cell weui-cell_access">
+                                    <view class="weui-cell__bd">失眠（2020-07-04）</view>
+                                    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                                </navigator> -->
+                            </block>
+                        </view>
+                    </view>
+                </view>
+        </view>
+    </view>
+    <view class="page__bd searchbar-result" hidden="{{tipsShowed}}" >
+        <view class="weui-cells__title" style="text-align: center">无记录</view>
+       
+    </view>
+            
+  </view>
+  
+</view>

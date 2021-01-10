@@ -1,0 +1,126 @@
+
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class="page">
+    <view class="page__bd">
+        <!-- <view class="weui-cells__title">本次调理选项</view>
+        <view class="weui-cells weui-cells_after-title">
+           <view class="weui-cell ">
+                <view class="weui-cell__bd">
+                    {{tipsText}}
+                </view>
+            </view>
+        </view> -->
+
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                    <view class="weui-label">本次调理:</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindtipsTextChange" value="{{typeIndex}}" range="{{tips}}" range-key="symptomsName"  data-conditionId="{{tips[typeIndex].conditionId}}">
+                        <view class="weui-select weui-select_in-select-after">{{tips[typeIndex].symptomsName}}</view>
+                    </picker>
+                </view>
+            </view>
+        </view>
+        
+        <view class="weui-cells__title">脏项</view>
+        <view class="weui-cells weui-cells_after-title">
+            <radio-group bindchange="dirtyItemsChange">
+                <label class="weui-cell weui-check__label" wx:for="{{dirtyItems}}" wx:key="organsSeq">
+                    <radio class="weui-check" value="{{item.organsSeq}}" checked="{{item.checked}}"/>
+
+                    <view class="weui-cell__bd">{{item.organsName}}</view>
+                    <view class="weui-cell__ft weui-cell__ft_in-radio" wx:if="{{item.checked}}">
+                        <icon class="weui-icon-radio" type="success_no_circle" size="16"></icon>
+                    </view>
+                </label>
+            </radio-group>
+        </view>
+
+        <view class="weui-cells__title">舌苔</view>
+        <view class="weui-cells weui-cells_after-title">
+            <radio-group bindchange="tongueItemsChange">
+                <label class="weui-cell weui-check__label" wx:for="{{tongueItems}}" wx:key="tongueSeq">
+                    <radio class="weui-check" value="{{item.tongueSeq}}" checked="{{item.checked}}"/>
+
+                    <view class="weui-cell__bd">{{item.tongueColor}}</view>
+                    <view class="weui-cell__ft weui-cell__ft_in-radio" wx:if="{{item.checked}}">
+                        <icon class="weui-icon-radio" type="success_no_circle" size="16"></icon>
+                    </view>
+                </label>
+            </radio-group>
+        </view>
+        <view class="weui-cells__title">舌苔图片</view>
+        <view class="group-body">
+          <view class="img-upload">
+            <view class="img-add" bindtap="chooseImage"></view>
+            <view class="img-item" bindlongtap="editImage" wx:for="{{uploadimgs}}" wx:key="{{index}}">
+              <icon type="clear" size="20" color="red" style="display:{{editable?'block':'none'}}" bindtap="deleteImg" data-index="{{index}}"/>
+              <image src="{{item}}" mode="aspectFill"></image>
+            </view>
+          </view>
+        </view>
+
+        
+
+        <!-- <view class="weui-btn-area">
+            <button class="weui-btn" type="primary" bindtap="questionSubmit">提交</button>
+        </view> -->
+
+        <view class="page__bd">
+        <view class="weui-btn-area">
+            <button class="weui-btn" type="default" bindtap="openDialog">提交</button>
+        </view>
+        <view class="weui-demo-dialog {{istrue ? 'weui-demo-dialog_show' : ''}}">
+          <view class="weui-mask" bindtap="closeDialog"></view>
+          <view class="weui-dialog__wrp" bindtap="closeDialog">
+              <!-- <view class="weui-dialog" catchtap="stopEvent"> -->
+              <view class="weui-dialog" >
+                <view class="weui-dialog__hd">
+                  <view class="weui-dialog__title">请确认问诊信息</view>
+                </view>
+                <view class="weui-dialog__bd">
+                  <!-- <image class="weui-article__img" src="../../images/pic_article.png" mode="aspectFill" style="max-width:100%;"/> -->
+                  <view class="weui-form-preview">
+                    <view class="weui-form-preview__hd">
+                        <view class="weui-form-preview__item">
+                            <view class="weui-form-preview__label">本次调理</view>
+                            <view class="weui-form-preview__value_in-hd">{{tips[typeIndex].symptomsName}}</view>
+                        </view>
+                    </view>
+                    <view class="weui-form-preview__bd">
+                        <view class="weui-form-preview__item">
+                            <view class="weui-form-preview__label">会员号</view>
+                            <view class="weui-form-preview__value">{{vipnumber}}</view>
+                        </view>
+                        <view class="weui-form-preview__item">
+                            <view class="weui-form-preview__label">类型</view>
+                            <view class="weui-form-preview__value">{{filter.formatUserType(userType)}}</view>
+                        </view>
+                        <view class="weui-form-preview__item">
+                            <view class="weui-form-preview__label">脏项</view>
+                            <view class="weui-form-preview__value">{{dirtyItemText}}</view>
+                        </view>
+                        <view class="weui-form-preview__item">
+                            <view class="weui-form-preview__label">舌苔</view>
+                            <view class="weui-form-preview__value">{{tongueItemText}}</view>
+                        </view>
+                        <view class="weui-form-preview__item">
+                            <view class="weui-form-preview__label">备注</view>
+                            <view class="weui-form-preview__value"></view>
+                        </view>
+                    </view>
+                  </view>
+                </view>
+                <view class="weui-dialog__ft">
+                    <view class="weui-dialog__btn weui-dialog__btn_default" bindtap="closeDialog">取消</view>
+                    <view class="weui-dialog__btn" bindtap="subData">确定</view>
+                </view>
+              </view>
+          </view>
+        </view>
+    </view>
+
+    </view>
+</view>

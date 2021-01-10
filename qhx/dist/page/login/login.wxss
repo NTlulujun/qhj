@@ -1,0 +1,47 @@
+/* example/input/input.wxss */
+.headView {
+   margin: 10rpx 10rpx 10rpx 10rpx; /*上右下左*/
+  }
+  
+.headImageView {
+  display: block;
+  text-align: center;
+  margin-left: 20px;
+  margin-top: 10px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  height: 150px;
+  }
+  
+  .headImage{
+  /* display: flex; */
+  text-align: center;
+  width: 150px;
+  height: 150px;
+  }
+  
+  .titleText {
+  margin-top: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
+  font-size: 14px;
+  color: #020e0f;
+  text-align: center;
+  }
+  
+  .contentText {
+  margin-top: 0px;
+  margin-left: 25px;
+  margin-right: 25px;
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+  }
+  
+  .authBtn {
+  margin-top: 35px;
+  margin-left: 25px;
+  margin-right: 25px;
+  height: 45px;
+  font-size: 17.5px;
+  }

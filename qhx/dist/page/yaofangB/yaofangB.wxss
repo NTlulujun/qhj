@@ -1,0 +1,45 @@
+/* example/input/input.wxss */
+
+.text_title {
+  font-size:15px;
+  font-weight:700;
+  width: 240rpx;
+  height: 90rpx;
+  text-align: center;
+}
+
+.text_context {
+  font-size:15px;
+  font-weight:400;
+  width: 240rpx;
+  height: 75rpx;
+  text-align: center;
+}
+
+/*checkbox 整体大小  */
+checkbox {
+  width: 160rpx;
+  height: 90rpx;
+  margin-left:20rpx;
+}
+/*checkbox 选项框大小  */
+checkbox .wx-checkbox-input {
+  width: 50rpx;
+  height: 50rpx;
+}
+/*checkbox选中后样式  */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  background: #FF525C;
+}
+/*checkbox选中后图标样式  */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  width: 28rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+  text-align: center;
+  font-size: 22rpx;
+  color: #fff;
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}

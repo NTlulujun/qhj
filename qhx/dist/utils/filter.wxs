@@ -1,0 +1,58 @@
+var formatTime = function (date) {
+  var date = getDate(date)
+  var year = date.getFullYear()
+  var month = date.getMonth() + 1
+  var day = date.getDate()
+  var hour = date.getHours()
+  var minute = date.getMinutes()
+  var second = date.getSeconds()
+  
+    return [year, month, day].map(formatNumber).join('-') + ' ' + [hour, minute, second].map(formatNumber).join(':')
+  }
+  
+  
+  var formatNumber = function(n) {
+    n = n.toString()
+    return n[1] ? n : '0' + n
+  }
+
+  var formatTiaoliType = function(n) {
+    n = n.toString();
+    switch ( n ) {
+      case "A":
+        return "局部调理"
+        break;
+      case "B":
+        return "基础调理"
+        break;
+      case "C":
+        return "全身调理"
+        break;
+      default:
+        return ""
+    }
+  }
+
+  var formatUserType = function(n) {
+    n = n.toString();
+    switch ( n ) {
+      case '0':
+        return "成人"
+        break;
+      case '1':
+        return "中童"
+        break;
+      case '2':
+        return "小童"
+        break;
+      default:
+        return n
+    }
+  }
+  
+  module.exports = {
+    formatTime: formatTime,
+    formatTiaoliType: formatTiaoliType,
+    formatUserType: formatUserType,
+    formatNumber: formatNumber
+  }

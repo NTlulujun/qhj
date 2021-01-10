@@ -1,0 +1,43 @@
+<view class="weui-form-preview">
+  <view class="weui-form-preview__hd">
+      <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">本次调理</view>
+          <view class="weui-form-preview__value_in-hd">{{symptomsName}}</view>
+      </view>
+  </view>
+  <view class="weui-form-preview__bd">
+      <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">会员号</view>
+          <view class="weui-form-preview__value">{{vipnumber}}</view>
+      </view>
+      <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">类型</view>
+          <view class="weui-form-preview__value">{{userType}}</view>
+      </view> 
+      <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">脏项</view>
+          <view class="weui-form-preview__value">{{organs}}</view>
+      </view>
+      <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">舌苔</view>
+          <view class="weui-form-preview__value">{{tongue}}</view>
+      </view>
+  </view>
+  <view class="weui-cells__title">选择</view>
+  <view class="weui-cells weui-cells_after-title">
+      
+      <view class="weui-cell weui-cell_select">
+          <view class="weui-cell__hd weui-cell__hd_in-select-after">
+              <view class="weui-label">调理类型</view>
+          </view>
+          <view class="weui-cell__bd">
+              <picker bindchange="bindConditionTypesChange" value="{{conditionType}}" range="{{conditionTypes}}">
+                        <view class="weui-select weui-select_in-select-after">{{conditionTypes[conditionType]}}</view>
+                    </picker>
+          </view>
+      </view>
+  </view>
+  <view class="weui-btn-area">
+      <button class="weui-btn" type="primary" bindtap="submit2next">下一步</button>
+  </view>
+</view>

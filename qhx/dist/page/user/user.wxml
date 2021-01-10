@@ -1,0 +1,103 @@
+
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+    
+    <view class="page__bd">
+        <view class="weui-cells__title">会员号为自动生成</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell ">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">会员号</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input"  disabled="true" value="{{perId}}" />
+                </view>
+            </view>
+            
+        </view>
+        <view class="weui-cells__title">请输入姓名</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell ">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">姓名</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input"   placeholder="请输入" bindinput="perNameChange" value="{{perName}}"/>
+                </view>
+            </view>
+            
+        </view>
+        <view class="weui-cells__title">请输入年龄</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell ">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">年龄</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" id="perAge" placeholder="请输入" bindinput="perAgeChange" value="{{perAge}}"/>
+                </view>
+            </view>
+            
+        </view>
+        <view class="weui-cells__title">选择</view>
+        <view class="weui-cells weui-cells_after-title">
+            
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                    <view class="weui-label">性别</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindSexChange" value="{{sexIndex}}" range="{{sex}}">
+                        <view class="weui-select weui-select_in-select-after">{{sex[sexIndex]}}</view>
+                    </picker>
+                </view>
+            </view>
+        </view>
+
+        <view class="weui-cells__title">请输入手机号</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell ">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">手机号</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" id="perTelNum" placeholder="请输入" bindinput="perTelNumChange" value="{{perTelNum}}"/>
+                </view>
+            </view>
+            
+        </view>
+
+        <view class="weui-cells__title">请选择出生日期</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell ">
+                <view class="weui-cell__hd">
+                     <view class="weui-label">出生日期</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" id="perNum" placeholder="请选择"  value="{{perNum}}"/>
+                </view>
+                <picker mode="date" value="{{date}}" start="1900-01-01" end="2030-12-31" bindchange="perNumChange">
+                        <view class="weui-search-bar__cancel-btn" >选择</view>
+                    </picker>
+            </view>
+            
+        </view>
+
+        <view class="weui-cells__title">请输入地址</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell ">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">地址</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" id="perAdd" placeholder="请输入" bindinput="perAddChage" value="{{perAdd}}"/>
+                </view>
+            </view>
+            
+        </view>
+        
+
+        <view class="weui-btn-area">
+            <button class="weui-btn" type="primary" bindtap="submit2save">提交</button>
+        </view>
+    </view>
+</view>
